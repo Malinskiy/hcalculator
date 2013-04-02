@@ -1,0 +1,22 @@
+Making all in doc
+make[1]: Entering directory `/home/a.malinskiy/IdeaProjects/Calculator/jni/mpfr/doc'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/a.malinskiy/IdeaProjects/Calculator/jni/mpfr/doc'
+Making all in src
+make[1]: Entering directory `/home/a.malinskiy/IdeaProjects/Calculator/jni/mpfr/src'
+make  all-am
+make[2]: Entering directory `/home/a.malinskiy/IdeaProjects/Calculator/jni/mpfr/src'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/a.malinskiy/IdeaProjects/Calculator/jni/mpfr/src'
+make[1]: Leaving directory `/home/a.malinskiy/IdeaProjects/Calculator/jni/mpfr/src'
+Making all in tests
+make[1]: Entering directory `/home/a.malinskiy/IdeaProjects/Calculator/jni/mpfr/tests'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/a.malinskiy/IdeaProjects/Calculator/jni/mpfr/tests'
+Making all in tune
+make[1]: Entering directory `/home/a.malinskiy/IdeaProjects/Calculator/jni/mpfr/tune'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/a.malinskiy/IdeaProjects/Calculator/jni/mpfr/tune'
+make[1]: Entering directory `/home/a.malinskiy/IdeaProjects/Calculator/jni/mpfr'
+make[1]: Nothing to be done for `all-am'.
+make[1]: Leaving directory `/home/a.malinskiy/IdeaProjects/Calculator/jni/mpfr'

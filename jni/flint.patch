@@ -1,0 +1,200 @@
+diff -crB flint-1.6/flint.h flint/flint.h
+*** flint-1.6/flint.h	2010-12-24 06:45:11.000000000 +0300
+--- flint/flint.h	2013-03-22 11:04:22.823618770 +0400
+***************
+*** 256,262 ****
+     return result;
+  }
+  
+! 
+  
+  #ifdef __cplusplus
+   }
+--- 256,265 ----
+     return result;
+  }
+  
+! static inline double log2(double x)
+! {
+!    return log(x)/log(2);
+! }
+  
+  #ifdef __cplusplus
+   }
+diff -crB flint-1.6/makefile flint/makefile
+*** flint-1.6/makefile	2010-12-24 06:45:11.000000000 +0300
+--- flint/makefile	2013-03-22 11:06:33.567622329 +0400
+***************
+*** 20,28 ****
+  	CXX = g++
+  endif
+  
+! LIBS = -L$(FLINT_GMP_LIB_DIR) $(FLINT_LINK_OPTIONS) -lmpfr -lmpir -lpthread -lm
+  
+! LIBS2 = -L$(FLINT_GMP_LIB_DIR) -L$(FLINT_NTL_LIB_DIR) $(FLINT_LINK_OPTIONS) -lntl -lmpfr -lmpir -lpthread -lm 
+  
+  ifndef FLINT_NTL_INCLUDE_DIR
+  	INCS = -I$(FLINT_GMP_INCLUDE_DIR) -I$(FLINT_MPFR_INCLUDE_DIR) 
+--- 20,28 ----
+  	CXX = g++
+  endif
+  
+! LIBS = -L$(FLINT_GMP_LIB_DIR) -L$(FLINT_MPFR_LIB_DIR) $(FLINT_LINK_OPTIONS) -lgmp -lmpfr -lm
+  
+! LIBS2 = -L$(FLINT_GMP_LIB_DIR) -L$(FLINT_MPFR_LIB_DIR) -L$(FLINT_NTL_LIB_DIR) $(FLINT_LINK_OPTIONS) -lgmp -lntl -lmpfr -lm 
+  
+  ifndef FLINT_NTL_INCLUDE_DIR
+  	INCS = -I$(FLINT_GMP_INCLUDE_DIR) -I$(FLINT_MPFR_INCLUDE_DIR) 
+***************
+*** 173,178 ****
+--- 173,182 ----
+  libflint.so: $(FLINTOBJ)
+  	$(CC) -fPIC -shared -o libflint.so $(FLINTOBJ) $(LIBS)
+  
++ libflint.a: $(FLINTOBJ)
++ 	$(CC) -c $(FLINTOBJ) $(LIBS)
++ 	$(AR) rcs libflint.a $(FLINTOBJ)
++ 
+  ##### zn_poly object files
+  
+  zn_mod.o: zn_poly/src/zn_mod.c $(HEADERS)
+diff -crB flint-1.6/QS/mp_linear_algebra.c flint/QS/mp_linear_algebra.c
+*** flint-1.6/QS/mp_linear_algebra.c	2010-12-24 06:45:11.000000000 +0300
+--- flint/QS/mp_linear_algebra.c	2013-03-22 11:04:22.835618769 +0400
+***************
+*** 75,81 ****
+     {
+        mpz_init2(Y_arr[i], prec);
+     }
+!    unsigned long i;
+     for (i = 0; i < qs_inf->num_primes + EXTRA_RELS + 1000; i++) 
+     {
+        matrix[i].weight = 0;
+--- 75,81 ----
+     {
+        mpz_init2(Y_arr[i], prec);
+     }
+!    //unsigned long i;
+     for (i = 0; i < qs_inf->num_primes + EXTRA_RELS + 1000; i++) 
+     {
+        matrix[i].weight = 0;
+***************
+*** 100,112 ****
+        mpz_clear(Y_arr[i]);
+     }
+     
+! 	unsigned long i;
+  	for (i = 0; i < la_inf->columns; i++) // Clear all used columns
+     {
+  		free_col(matrix + i);
+     }
+     
+!    unsigned long i;
+     for (i = 0; i < la_inf->num_unmerged; i++) // Clear all used columns
+     {
+        free_col(unmerged + i);
+--- 100,112 ----
+        mpz_clear(Y_arr[i]);
+     }
+     
+! 	//unsigned long i;
+  	for (i = 0; i < la_inf->columns; i++) // Clear all used columns
+     {
+  		free_col(matrix + i);
+     }
+     
+!    //unsigned long i;
+     for (i = 0; i < la_inf->num_unmerged; i++) // Clear all used columns
+     {
+        free_col(unmerged + i);
+***************
+*** 331,337 ****
+     {
+         if (small[i]) add_factor(&rel_ptr, (unsigned long) small[i], (unsigned long) i);
+     }
+!    unsigned long i;
+     for (i = 0; i < num_factors; i++)
+     {
+         add_factor(&rel_ptr, (unsigned long) factor[i].exp, (unsigned long) factor[i].ind);
+--- 331,337 ----
+     {
+         if (small[i]) add_factor(&rel_ptr, (unsigned long) small[i], (unsigned long) i);
+     }
+!    //unsigned long i;
+     for (i = 0; i < num_factors; i++)
+     {
+         add_factor(&rel_ptr, (unsigned long) factor[i].exp, (unsigned long) factor[i].ind);
+***************
+*** 387,393 ****
+            fac_num++;
+         }
+     }
+!    unsigned long i;
+     for (i = 0; i < num_factors; i++)
+     {
+         if (factor[i].exp & 1) insert_col_entry(unmerged + num_unmerged, factor[i].ind);
+--- 387,393 ----
+            fac_num++;
+         }
+     }
+!    //unsigned long i;
+     for (i = 0; i < num_factors; i++)
+     {
+         if (factor[i].exp & 1) insert_col_entry(unmerged + num_unmerged, factor[i].ind);
+diff -crB flint-1.6/QS/mpQS.c flint/QS/mpQS.c
+*** flint-1.6/QS/mpQS.c	2010-12-24 06:45:11.000000000 +0300
+--- flint/QS/mpQS.c	2013-03-22 11:04:22.835618769 +0400
+***************
+*** 93,99 ****
+     }
+     mpz_mod(Y, Y, N);
+     
+!    unsigned long i;
+     for (i = 0; i < num_primes; i++)
+     {
+        if (prime_count[i]) 
+--- 93,99 ----
+     }
+     mpz_mod(Y, Y, N);
+     
+!    //unsigned long i;
+     for (i = 0; i < num_primes; i++)
+     {
+        if (prime_count[i]) 
+diff -crB flint-1.6/QS/mp_sieve.c flint/QS/mp_sieve.c
+*** flint-1.6/QS/mp_sieve.c	2010-12-24 06:45:11.000000000 +0300
+--- flint/QS/mp_sieve.c	2013-03-22 11:04:22.835618769 +0400
+***************
+*** 112,118 ****
+        }
+     }
+     
+!    unsigned long prime;
+     for (prime = second_prime; prime < num_primes; prime++) 
+     {
+        p = factor_base[prime].p;
+--- 112,118 ----
+        }
+     }
+     
+!    //unsigned long prime;
+     for (prime = second_prime; prime < num_primes; prime++) 
+     {
+        p = factor_base[prime].p;
+***************
+*** 409,415 ****
+  #endif
+     } else small[0] = 0;
+     
+!    unsigned long j;
+     for (j = 2; j < small_primes; j++) // pull out small primes
+     {
+        prime = factor_base[j].p;
+--- 409,415 ----
+  #endif
+     } else small[0] = 0;
+     
+!    //unsigned long j;
+     for (j = 2; j < small_primes; j++) // pull out small primes
+     {
+        prime = factor_base[j].p;

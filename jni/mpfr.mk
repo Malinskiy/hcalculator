@@ -1,0 +1,7 @@
+LOCAL_PATH := $(call my-dir)
+
+LOCAL_MODULE := mpfr
+LOCAL_SRC_FILES := libs/$(TARGET_ARCH_ABI)/lib/libmpfr.a
+LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/libs/$(TARGET_ARCH_ABI)/include
+
+include $(PREBUILT_STATIC_LIBRARY)

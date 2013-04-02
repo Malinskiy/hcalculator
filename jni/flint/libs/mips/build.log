@@ -1,0 +1,67 @@
+/opt/tadp/android-ndk-r8d/toolchains/mipsel-linux-android-4.7/prebuilt/linux-x86/bin/mipsel-linux-android-gcc --sysroot=/opt/tadp/android-ndk-r8d/platforms/android-14/arch-mips -std=c99 -I../gmp/libs/mips/include -I/usr/local/sage/sage-4.5.3/local/include -I../mpfr/libs/mips/include -funroll-loops  -std=c99 -O3 -static -march=mips32 -g -O2 -DNDEBUG -o zn_mod.o -c zn_poly/src/zn_mod.c
+/opt/tadp/android-ndk-r8d/toolchains/mipsel-linux-android-4.7/prebuilt/linux-x86/bin/mipsel-linux-android-gcc --sysroot=/opt/tadp/android-ndk-r8d/platforms/android-14/arch-mips -std=c99 -I../gmp/libs/mips/include -I/usr/local/sage/sage-4.5.3/local/include -I../mpfr/libs/mips/include -funroll-loops  -std=c99 -O3 -static -march=mips32 -g -O2 -DNDEBUG -o misc.o -c zn_poly/src/misc.c
+/opt/tadp/android-ndk-r8d/toolchains/mipsel-linux-android-4.7/prebuilt/linux-x86/bin/mipsel-linux-android-gcc --sysroot=/opt/tadp/android-ndk-r8d/platforms/android-14/arch-mips -std=c99 -I../gmp/libs/mips/include -I/usr/local/sage/sage-4.5.3/local/include -I../mpfr/libs/mips/include -funroll-loops  -std=c99 -O3 -static -march=mips32 -g -O2 -DNDEBUG -o mul_ks.o -c zn_poly/src/mul_ks.c
+/opt/tadp/android-ndk-r8d/toolchains/mipsel-linux-android-4.7/prebuilt/linux-x86/bin/mipsel-linux-android-gcc --sysroot=/opt/tadp/android-ndk-r8d/platforms/android-14/arch-mips -std=c99 -I../gmp/libs/mips/include -I/usr/local/sage/sage-4.5.3/local/include -I../mpfr/libs/mips/include -funroll-loops  -std=c99 -O3 -static -march=mips32 -g -O2 -DNDEBUG -o pack.o -c zn_poly/src/pack.c
+/opt/tadp/android-ndk-r8d/toolchains/mipsel-linux-android-4.7/prebuilt/linux-x86/bin/mipsel-linux-android-gcc --sysroot=/opt/tadp/android-ndk-r8d/platforms/android-14/arch-mips -std=c99 -I../gmp/libs/mips/include -I/usr/local/sage/sage-4.5.3/local/include -I../mpfr/libs/mips/include -funroll-loops  -std=c99 -O3 -static -march=mips32 -g -O2 -DNDEBUG -o mul.o -c zn_poly/src/mul.c
+/opt/tadp/android-ndk-r8d/toolchains/mipsel-linux-android-4.7/prebuilt/linux-x86/bin/mipsel-linux-android-gcc --sysroot=/opt/tadp/android-ndk-r8d/platforms/android-14/arch-mips -std=c99 -I../gmp/libs/mips/include -I/usr/local/sage/sage-4.5.3/local/include -I../mpfr/libs/mips/include -funroll-loops  -std=c99 -O3 -static -march=mips32 -g -O2 -DNDEBUG -o mulmid.o -c zn_poly/src/mulmid.c
+/opt/tadp/android-ndk-r8d/toolchains/mipsel-linux-android-4.7/prebuilt/linux-x86/bin/mipsel-linux-android-gcc --sysroot=/opt/tadp/android-ndk-r8d/platforms/android-14/arch-mips -std=c99 -I../gmp/libs/mips/include -I/usr/local/sage/sage-4.5.3/local/include -I../mpfr/libs/mips/include -funroll-loops  -std=c99 -O3 -static -march=mips32 -g -O2 -DNDEBUG -o mulmid_ks.o -c zn_poly/src/mulmid_ks.c
+/opt/tadp/android-ndk-r8d/toolchains/mipsel-linux-android-4.7/prebuilt/linux-x86/bin/mipsel-linux-android-gcc --sysroot=/opt/tadp/android-ndk-r8d/platforms/android-14/arch-mips -std=c99 -I../gmp/libs/mips/include -I/usr/local/sage/sage-4.5.3/local/include -I../mpfr/libs/mips/include -funroll-loops  -std=c99 -O3 -static -march=mips32 -g -O2 -DNDEBUG -o ks_support.o -c zn_poly/src/ks_support.c
+/opt/tadp/android-ndk-r8d/toolchains/mipsel-linux-android-4.7/prebuilt/linux-x86/bin/mipsel-linux-android-gcc --sysroot=/opt/tadp/android-ndk-r8d/platforms/android-14/arch-mips -std=c99 -I../gmp/libs/mips/include -I/usr/local/sage/sage-4.5.3/local/include -I../mpfr/libs/mips/include -funroll-loops  -std=c99 -O3 -static -march=mips32 -g -O2 -DNDEBUG -o mpn_mulmid.o -c zn_poly/src/mpn_mulmid.c
+In file included from zn_poly/src/zn_poly_internal.h:41:0,
+                 from zn_poly/src/zn_mod.c:23:
+zn_poly/src/zn_mod.c: In function 'zn_mod_pow':
+zn_poly/src/zn_poly.h:489:4: error: impossible constraint in 'asm'
+zn_poly/src/zn_poly.h:325:4: error: impossible constraint in 'asm'
+zn_poly/src/zn_poly.h:329:4: error: impossible constraint in 'asm'
+zn_poly/src/zn_poly.h:489:4: error: impossible constraint in 'asm'
+zn_poly/src/zn_poly.h:325:4: error: impossible constraint in 'asm'
+zn_poly/src/zn_poly.h:329:4: error: impossible constraint in 'asm'
+make: *** [zn_mod.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from zn_poly/src/zn_poly_internal.h:41:0,
+                 from zn_poly/src/ks_support.c:24:
+zn_poly/src/ks_support.c: In function 'ZNP_array_reduce':
+zn_poly/src/zn_poly.h:300:4: error: impossible constraint in 'asm'
+zn_poly/src/zn_poly.h:269:4: error: impossible constraint in 'asm'
+zn_poly/src/zn_poly.h:410:4: error: impossible constraint in 'asm'
+zn_poly/src/zn_poly.h:352:4: error: impossible constraint in 'asm'
+zn_poly/src/zn_poly.h:387:4: error: impossible constraint in 'asm'
+zn_poly/src/zn_poly.h:325:4: error: impossible constraint in 'asm'
+zn_poly/src/zn_poly.h:329:4: error: impossible constraint in 'asm'
+zn_poly/src/zn_poly.h:460:4: error: impossible constraint in 'asm'
+zn_poly/src/zn_poly.h:461:4: error: impossible constraint in 'asm'
+zn_poly/src/zn_poly.h:352:4: error: impossible constraint in 'asm'
+zn_poly/src/zn_poly.h:428:4: error: impossible constraint in 'asm'
+zn_poly/src/zn_poly.h:429:4: error: impossible constraint in 'asm'
+zn_poly/src/zn_poly.h:325:4: error: impossible constraint in 'asm'
+zn_poly/src/zn_poly.h:329:4: error: impossible constraint in 'asm'
+make: *** [ks_support.o] Error 1
+zn_poly/src/mpn_mulmid.c: In function 'ZNP_mpn_smp_kara':
+zn_poly/src/mpn_mulmid.c:388:10: error: impossible constraint in 'asm'
+In file included from zn_poly/src/zn_poly_internal.h:41:0,
+                 from zn_poly/src/mulmid_ks.c:23:
+zn_poly/src/mulmid_ks.c: In function 'ZNP_diagonal_sum':
+zn_poly/src/zn_poly.h:300:4: error: impossible constraint in 'asm'
+zn_poly/src/zn_poly.h:269:4: error: impossible constraint in 'asm'
+zn_poly/src/mulmid_ks.c:335:7: error: impossible constraint in 'asm'
+zn_poly/src/mulmid_ks.c:339:10: error: impossible constraint in 'asm'
+In file included from zn_poly/src/zn_poly_internal.h:41:0,
+                 from zn_poly/src/mulmid_ks.c:23:
+zn_poly/src/zn_poly.h:410:4: error: impossible constraint in 'asm'
+zn_poly/src/zn_poly.h:352:4: error: impossible constraint in 'asm'
+zn_poly/src/zn_poly.h:387:4: error: impossible constraint in 'asm'
+zn_poly/src/zn_poly.h:325:4: error: impossible constraint in 'asm'
+zn_poly/src/zn_poly.h:329:4: error: impossible constraint in 'asm'
+zn_poly/src/mulmid_ks.c:352:7: error: impossible constraint in 'asm'
+zn_poly/src/mulmid_ks.c:356:10: error: impossible constraint in 'asm'
+In file included from zn_poly/src/zn_poly_internal.h:41:0,
+                 from zn_poly/src/mulmid_ks.c:23:
+zn_poly/src/zn_poly.h:460:4: error: impossible constraint in 'asm'
+zn_poly/src/zn_poly.h:461:4: error: impossible constraint in 'asm'
+zn_poly/src/zn_poly.h:352:4: error: impossible constraint in 'asm'
+zn_poly/src/zn_poly.h:428:4: error: impossible constraint in 'asm'
+zn_poly/src/zn_poly.h:429:4: error: impossible constraint in 'asm'
+zn_poly/src/zn_poly.h:325:4: error: impossible constraint in 'asm'
+zn_poly/src/zn_poly.h:329:4: error: impossible constraint in 'asm'
+make: *** [mpn_mulmid.o] Error 1
+make: *** [mulmid_ks.o] Error 1
